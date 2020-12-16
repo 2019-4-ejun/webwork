@@ -1,0 +1,398 @@
+/*Style*/
+html{
+	overflow-x: hidden;
+}
+#danmu span{
+	position:absolute;
+	white-space:nowrap;
+}
+#liuyan,#danmu{
+	width:1305px;
+	height:420px;
+	background-color:black;
+	color:white;
+	position:absolute;
+	font-size:2em;
+	left:307.5px;
+	top:110px;
+	display:none;
+}
+#guding{
+	width:300px;
+	height:274px;
+	position:fixed;
+	top:627px;
+}
+#gudings{
+	width:300px;
+	height:274px;
+	position:fixed;
+	left:1600px;
+	top:627px;
+}
+.guding{
+	width:300px;
+	height:137px;
+	text-align:center;
+	line-height:137px;
+	color:white;
+	font-size:3em;
+	background:black;
+	border-radius:68px;
+	
+}
+div.quanbu{
+	width: 1920px;
+	display: inline-block;
+}
+.dao{
+	width: 1920px;
+	height: 110px;
+}
+img.xue{
+	width: 170px;
+	height: 39px;
+	margin-top: 33px;
+	margin-left: 369px;
+	margin-bottom: 29px;
+	display: inline-block;
+}
+.ul{
+	width: 241px;
+	height: 18px;
+	margin-top: 42px;
+	margin-left: 79px;
+	margin-bottom: 41px;
+	display: inline-block;
+}
+.ul1{
+	width: 242px;
+	height: 18px;
+}
+.li{
+	float: left;
+	margin-right: 42px;
+	line-height: 18px;
+	font-size: 18px;
+	font-family:Microsoft YaHei;
+	font-weight:400;
+	display: inline-block;
+	color:rgba(5,5,5,1);
+}
+.li:hover{
+	color:rgba(0,164,255,1) ;
+	padding-bottom: 10px;
+	border-bottom: 2px solid rgba(0,164,255,1);
+}
+li:hover{
+	color:rgba(0,164,255,1) ;
+}
+#zhi{
+	margin-right: 0px;
+}
+.input{
+	width: 353px;
+	height: 36px;
+	vertical-align: top;
+	margin-top: 31px;
+	margin-left: 187px;
+	margin-bottom: 30px;
+	display: inline-block;
+	border: 1px solid black;
+}
+.sou{
+	width: 50px;
+	height: 40px;
+	vertical-align: top;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	margin-left: 0px;
+	display: inline-block;
+	border: 0px;
+	background: black url(../imgs/fa-search.png) no-repeat center center;
+}
+.ge{
+	width: 66px;
+	height: 12px;
+	line-height: 12px;
+	vertical-align: top;
+	margin-top: 44px;
+	margin-left: 28px;
+	margin-bottom: 25px;
+	display: inline-block;
+	font-size:14px;
+	font-family:Microsoft YaHei;
+	font-weight:400;
+	color:rgba(102,102,102,1);
+}
+.dao2{
+	width: 1920px;
+	height: 420px;
+	background: black url(../imgs/banner.jpg) no-repeat center center;
+	background-size: contain;
+}
+.zhong{
+	width: 1920px;
+	background: rgba(243, 245, 247, 1);
+}
+.dao3{
+	width: 1200px;
+	height: 18px;
+	margin-left: 360px;
+	padding: 21px 0px;
+	background: rgba(255, 255, 255, 1);
+	box-shadow:0px 1px 2px 0px rgba(118,118,118,0.2);
+}
+.ul3{
+	width: 1150px;
+	height: 60px;
+}
+.li3{
+	width: 130px;
+	height: 18px;
+	line-height: 18px;
+	display: inline-block;
+	float: left;
+	border-right: 1px solid #BFBFBF;
+	text-align: center;
+	font-size:16px;
+	font-family:Microsoft YaHei;
+	color:rgba(5,5,5,1);
+}
+#none{
+	border-right: 0px;
+}
+#jing{
+	color:rgba(0,164,255,1);
+	font-weight: bold;
+}
+.xiu{
+	width: 120px;
+	height: 18px;
+	line-height: 18px;
+	display: inline-block;
+	float: right;
+	margin-right: 61px;
+	text-align: center;
+	font-size:16px;
+	font-family:Microsoft YaHei;
+	color:rgba(0,164,255,1);
+}
+.p1{
+	width: 1200px;
+	height: 40px;
+	padding-top: 15px;
+	margin-left: 360px;
+	font-size:30px;
+	font-family:Microsoft YaHei;
+	font-weight:bold;
+	color:rgba(73,73,73,1);
+}
+
+.imgs{
+	width: 1200px;
+	height: 555px;
+	margin-left: 360px;
+}
+.ul3{
+	width: 1200px;
+}
+.li4{
+	width: 226px;
+	height: 270px;
+	margin: 15px 15px 0 0;
+	display: inline-block;
+	float: left;
+	border: 1px solid grey;
+	position: relative;
+}
+.tu{
+	width: 228px;
+	height: 135px;
+}
+.li41{
+	width: 226px;
+	height: 270px;
+	margin: 15px 0 0 0;
+	display: inline-block;
+	float: left;
+	border: 1px solid grey;
+	position: relative;
+}
+.zi{
+	width:185px;
+	height:34px;
+	margin-bottom: 18px;
+	font-size:14px;
+	font-family:Microsoft YaHei;
+	font-weight:400;
+	color:rgba(5,5,5,1);
+	line-height:12px;
+}
+.gao{
+	width:120px;
+	height:14px;
+	font-size:12px;
+	font-family:Microsoft YaHei;
+	font-weight:400;
+	color:#999999;
+}
+.yellow{
+	color: #FF7C2D;
+}
+.li4>div{
+	position: absolute;
+	bottom: 26px;
+	left: 23px;
+}
+.li41>div{
+	position: absolute;
+	bottom: 26px;
+	left: 23px;
+}
+.p2{
+	width: 320px;
+	height: 62px;
+	line-height: 62px;
+	font-size:20px;
+	font-family:Microsoft YaHei;
+	font-weight:400;
+	color:rgba(73,73,73,1);
+	display: inline-block;
+}
+.dao5{
+	width: 1920px;
+	height: 274px;
+	background-color: black;
+	font: 12px write;
+}
+.dao51{
+	margin-top: 61px;
+	margin-left: 380px;
+	display: inline-block;
+}
+.xue2{
+	width: 143px;
+	height: 36px;
+}
+.p51{
+	width: 379px;
+	height: 12px;
+	margin-top: 35px;
+	margin-bottom: 33px;
+	font-size: 12px;
+	font-family:SimSun;
+	font-weight:400;
+	line-height:12px;
+	color: grey;
+}
+.input3{
+	width: 120px;
+	height: 36px;
+	margin: 0px;
+	border-color: rgba(255, 255, 255, 1);
+	color: rgba(255, 255, 255, 1);
+	background-color: black;
+}
+.dao52{
+	margin-top: 61px;
+	margin-left:272px;
+	vertical-align: top;
+	display: inline-block;
+}
+.p52{
+	width:80px;
+	height:18px;
+	margin-bottom: 10px;
+	font-size:16px;
+	font-family:Microsoft YaHei;
+	font-weight:400;
+	line-height:18px;
+	color: grey;
+}
+.ul5{
+	margin-left: 2px;
+}
+.li5{
+	font-size:12px;
+	font-family:SimSun;
+	font-weight:400;
+	line-height:22px;
+	color: grey;
+}
+#dao53{
+	margin-left:145px;
+}
+#dao54{
+	margin-left: 152px;
+}
+.li4:hover{
+	box-shadow:0px 1px 3px 0px rgba(118,118,118,0.5);
+}
+.li41:hover{
+	box-shadow:0px 1px 3px 0px rgba(118,118,118,0.5);
+}
+.ge:hover{
+	color:rgba(0,164,255,1) ;
+}
+.daul{
+	width: 1200px;
+	display: block;
+	margin: 15px 360px 0px 360px;
+	text-align: center;
+}
+.dali{
+	width: 84px;
+	height: 25px;
+	margin: 0px 32px 0 0;
+	border-bottom: 2px solid grey;
+	display: inline-block;
+	float: left;
+}
+.daa{
+	font-size: 14px;
+	color: grey;
+}
+.daa:hover{
+	color: rgba(0,164,255,1) ;
+}
+.zuo{
+	width: 306px;
+	height: 420px;
+	padding-top: 50px;
+	display: inline-block;
+}
+.deng{
+	text-align: center;
+	font-size: 30px;
+	margin-top: px;
+	font-family: Microsoft YaHei;
+	color: #fff;
+	line-height: 50px;
+
+}
+.deng1{
+	width: 306px;
+	height: 50px;
+	margin-bottom: 20px;
+}
+.deng2{
+	width: 100px;
+	height: 30px;
+	margin-left: 25.5px;
+	margin-bottom: 20px;
+}
+.deng3{
+	width: 100px;
+	height: 30px;
+	margin-left: 50px;
+	margin-bottom: 20px;
+}
+.right{
+	width: 306px;
+	height: 420px;
+	padding-top: 50px;
+	padding-right: 2px;
+	display: inline-block;
+	float: right;
+}

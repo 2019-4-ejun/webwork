@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#gjjpk,#mszl,#jsj,#wy{
+			height:700px;
+			display:none;
+		}
+		#box{
+			width: 180px;
+            height: 120px;
+            background-color: black;
+			position: fixed;
+            z-index: 999;
+			left: 50%;
+			top: 50%;
+		}
+		html,body{
+			height: 100%;
+		}
+	</style>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/css代码.css">
+</head>
+<body>
+	<script>
+		alert("若观看效果不佳，建议调成80%的比例观看！")
+	</script>
+	<div id="danmu" style="overflow: hidden;"></div>
+	<div id="liuyan" style="overflow: auto;">
+		<ul id="list">
+		<li>点击可删除我的留言(不过别想删我:))</li>
+	</ul>
+	</div>
+	<div id="guding">
+		<div class="guding">我要留言</div>
+		<div class="guding">我要弹幕</div>
+	</div>
+	<div id="gudings">
+		<div class="guding">我的留言</div>
+		<div class="guding">打开弹幕</div>
+	</div>
+	<script>
+		var div={};
+		for(var i=0;i<4;i++)
+			div[i]=document.getElementsByClassName("guding")[i];
+		var danmu=document.getElementById("danmu");
+		var liuyan= document.getElementById("liuyan");
+		var list=document.getElementById("list");
+		div[0].onclick=function(){
+			var value=prompt("请输入您要发送的留言","熊猫课堂棒棒的！");
+			if(value){
+				var li=document.createElement('li');
+				li.innerHTML=value;
+				list.appendChild(li);
+				li.onclick=function(){
+	 			list.removeChild(this);
+		}
+			}
+		}
+		
+		div[1].onclick=function(){
+			var value=prompt("请输入您要发送的弹幕","熊猫课堂棒棒的！");
+			if(value){
+				var span=document.createElement('span');
+				span.innerHTML="·"+value;
+				span.style.top=Math.random()*307+'px';
+				span.style.left="1305px";
+				danmu.appendChild(span);
+				var timer=setInterval(function(){
+					span.style.left=parseInt(span.style.left)-1+'px';
+					if(parseInt(span.style.left)<-span.offsetWidth){
+						danmu.removeChild(span);
+						clearInterval(timer);
+					}
+				},10);
+			}
+		}
+		div[2].onclick=function(){
+			if(liuyan.style.display=="block"){
+				liuyan.style.display="none";
+			}else{
+				liuyan.style.display="block";
+				danmu.style.display="none";
+				div[3].innerHTML="打开弹幕";
+			}
+		}
+		div[3].onclick=function(){
+			if(danmu.style.display=="block"){
+				danmu.style.display="none";
+				div[3].innerHTML="打开弹幕";
+			}else{
+				danmu.style.display="block";
+				div[3].innerHTML="关闭弹幕";
+				liuyan.style.display="none";
+			}
+		}
+	</script>
+	<div class="quanbu">
+		<div class="dao">
+			<img src="imgs/logo.jpg" class="xue">
+			<div class="ul">
+				<ul class="ul1">
+					<li class="li">课程</li>
+					<li class="li">学校</li>
+					<li class="li" id="zhi">学校云</li>
+				</ul>
+			</div>
+			<input type="text" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;输入关键词" class="input"><input type="submit" class="sou" value="">
+			<p class="ge">登录/注册</p>
+		</div>
+		<script>
+			var sou=document.getElementsByClassName("sou")[0];
+			var inp1=document.getElementsByClassName("input")[0];
+			var ge1=document.getElementsByClassName("ge")[0];
+			sou.onclick=function(){
+				if(inp1.value==""){
+					alert("请输入搜索内容！");
+				}else{
+					alert("请在中间的目录中查找！建议先点击‘查看全部’");
+				}
+			}
+			ge1.onclick=function(){
+				alert("请在首页两侧查找！");
+			}
+		</script>
+		<div class="dao2">
+			<div class="zuo">
+				<p class="deng">快速注册</p>
+				<input type="text" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;请输入您的账号" class="deng1">
+				<input type="password" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;请输入您的密码" class="deng1">
+				<input type="reset" class="deng2" value="重新输入">
+				<input type="submit" class="deng3" value="一键注册">
+			</div>
+			<div class="right">
+				<p class="deng">快速登录</p>
+				<input type="text" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;请输入您的账号" class="deng1">
+				<input type="password" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;请输入您的密码" class="deng1">
+				<input type="reset" class="deng2" value="重新输入">
+				<input type="submit" class="deng3" value="一键登录">
+			</div>
+		</div>
+		<script>
+			var deng10=document.getElementsByClassName("deng1")[0];
+			var deng11=document.getElementsByClassName("deng1")[1];
+			var deng20=document.getElementsByClassName("deng2")[0];
+			var deng30=document.getElementsByClassName("deng3")[0];
+			deng20.onclick=function(){
+				deng10.value="";
+				deng11.value="";
+			}
+			deng30.onclick=function(){
+				if(deng10.value=="" && deng11.value==""){
+					alert("账号、密码均不能为空");
+				}else if(deng10.value==""){
+					alert("账号不能为空！");
+				}else if(deng11.value==""){
+					alert("密码不能为空！");
+				}else{
+					alert("暂时无需注册！请铁粉们耐心等待更新！")
+				}
+			}
+			var deng12=document.getElementsByClassName("deng1")[2];
+			var deng13=document.getElementsByClassName("deng1")[3];
+			var deng21=document.getElementsByClassName("deng2")[1];
+			var deng31=document.getElementsByClassName("deng3")[1];
+			deng21.onclick=function(){
+				deng12.value="";
+				deng13.value="";
+			}
+			deng31.onclick=function(){
+				if(deng12.value=="" && deng13.value==""){
+					alert("账号、密码均不能为空");
+				}else if(deng12.value==""){
+					alert("账号不能为空！");
+				}else if(deng13.value==""){
+					alert("密码不能为空！");
+				}else{
+					alert("暂时无需登录！请铁粉们耐心等待更新！")
+				}
+			}
+		</script>
+		<div id="box">
+			<img src="imgs/logo.jpg" alt="" style="width: 180px">
+			<span style="text-align: center;color: white;">感谢关注熊猫课堂<br>点击关闭！</span>
+		</div>
+        <script>
+            var box = document.getElementById('box');
+            var maxTop = document.body.clientHeight - 120;
+            var maxLeft = document.body.clientWidth - 180;
+            var speedY = 1; 
+            var speedX = 1; 
+            function move(){
+                var curLeft = parseInt( getStyle(box,'left') );
+                var curTop = parseInt( getStyle(box,'top') );
+                if(curTop > maxTop || curTop<0){
+                    speedY = -speedY;
+                }
+                if(curLeft > maxLeft || curLeft<0){
+                    speedX = -speedX;
+                }
+                box.style.left = curLeft + speedX + 'px';  
+                box.style.top = curTop + speedY + 'px';  
+            }
+            
+            var id = setInterval(move,10);
+            box.onmouseout = function(){
+                id = setInterval(move,10)
+            }
+            box.onmouseover = function(){
+                clearInterval(id)
+            }
+            box.onclick = function(){
+                box.style.display="none";
+            }
+            
+            function getStyle(obj,attr){
+                if(obj.currentStyle){
+                    return obj.currentStyle[attr];
+                }else{
+                    return getComputedStyle(obj)[attr]
+                }
+            }
+        </script>
+		<div class="dao3">
+			<ul class="ul3">
+				<li class="li3" id="jing">国家精品</li>
+				<li class="li3">名师专栏</li>
+				<li class="li3">计算机</li>
+				<li class="li3">外语</li>
+				<li class="li3">21考研</li>
+				<li class="li3">理学</li>
+				<li class="li3" id="none">工学</li>
+				<li class="xiu">查看全部</li>
+			</ul>
+		</div>
+		<div class="zhong">
+			<div id="gjjpk" style="display: block;">
+			<p class="p1">国家精品课</p>
+			<ul class="daul">
+				<li class="dali"><a href="#" class="daa">最新好课推荐</a></li>
+			</ul>
+			<br><br>
+			<div class="imgs">
+				<ul class="ul3">
+					<li class="li4">
+						<img src="imgs/国1.webp" class="tu">
+						<div class="xiao">
+							<p class="zi">
+                                &nbsp;&nbsp;&nbsp;&nbsp;《数据结构》
+                                <br><br>
+                                浙江大学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;陈越
+                            </p>
+							<p class="gao"><span class="yellow">高级</span>
+                                •  7057人在学习
+                            </p>
+						</div>
+					</li>
+					<li class="li4">
+						<img src="imgs/国2.webp" class="tu">
+						<div class="xiao">
+							<p class="zi">
+                                &nbsp;&nbsp;&nbsp;&nbsp;《c语言程序设计进阶》
+                                <br><br>
+                                浙江大学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;翁恺
+                            </p>
+							<p class="gao"><span class="yellow">高级</span>
+                                •  24463人在学习
+                            </p>
+						</div>
+					</li>
+					<li class="li4">
+						<img src="imgs/国3.webp" class="tu">
+						<div class="xiao">
+							<p class="zi">
+                                &nbsp;&nbsp;&nbsp;&nbsp;《微积分 (四)》
+                                <br><br>
+                                电子科技大学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;高建
+                            </p>
+							<p class="gao"><span class="yellow">高级</span>
+                                •  7465人在学习
+                            </p>
+						</div>
+					</li>
+					<li class="li4">
+						<img src="imgs/国4.webp" class="tu">
+						<div class="xiao">
+							<p class="zi">
+                                &nbsp;&nbsp;&nbsp;&nbsp;《预防医学 (二)》
+                                <br><br>
+                                复旦大学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;戴俊明
+                            </p>
+							<p class="gao"><span class="yellow">高级</span>
+                                •  6594人在学习
+                            </p>
+						</div>
+					</li>
+					<li class="li41">
+						<img src="imgs/国5.webp" class="tu"><div class="xiao">
+							<p class="zi">
+                                &nbsp;&nbsp;&nbsp;&nbsp;《中国传统艺术》
+                                <br><br>
+                                哈尔滨工业大学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;胡修瑞     
+                            </p>
+							<p class="gao"><span class="yellow">高级</span>
+                                •  9894人在学习
+                            </p>
+						</div>
+					</li>
+					<li class="li4">
+						<img src="imgs/国5.webp" class="tu"><div class="xiao">
+							<p class="zi">
+                                &nbsp;&nbsp;&nbsp;&nbsp;《中国传统艺术》
+                                <br><br>
+                                哈尔滨工业大学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;胡修瑞     
+                            </p>
+							<p class="gao"><span class="yellow">高级</span>
+                                •  9894人在学习
+                            </p>
+						</div>
+					</li>
+					<li class="li4">
+						<img src="imgs/国1.webp" class="tu">
+						<div class="xiao">
+							<p class="zi">
+                                &nbsp;&nbsp;&nbsp;&nbsp;《数据结构》
+                                <br><br>
+                                浙江大学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;陈越
+                            </p>
+							<p class="gao"><span class="yellow">高级</span>
+                                •  7057人在学习
+                            </p>
+						</div>
+					</li>
+					<li class="li4">
+						<img src="imgs/国2.webp" class="tu">
+						<div class="xiao">
+							<p class="zi">
+                                &nbsp;&nbsp;&nbsp;&nbsp;《c语言程序设计进阶》
+                                <br><br>
+                                浙江大学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;翁恺
+                            </p>
+							<p class="gao"><span class="yellow">高级</span>
+                                •  24463人在学习
+                            </p>
+						</div>
+					</li>
+					<li class="li4">
+						<img src="imgs/国3.webp" class="tu">
+						<div class="xiao">
+							<p class="zi">
+                                &nbsp;&nbsp;&nbsp;&nbsp;《微积分 (四)》
+                                <br><br>
+                                电子科技大学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;高建
+                            </p>
+							<p class="gao"><span class="yellow">高级</span>
+                                •  7465人在学习
+                            </p>
+						</div>
+					</li>
+					<li class="li41">
+						<img src="imgs/国4.webp" class="tu">
+						<div class="xiao">
+							<p class="zi">
+                                &nbsp;&nbsp;&nbsp;&nbsp;《预防医学 (二)》
+                                <br><br>
+                                复旦大学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;戴俊明
+                            </p>
+							<p class="gao"><span class="yellow">高级</span>
+                                •  6594人在学习
+                            </p>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+<br>
+		<div id="mszl">
+			<p class="p1">名师专栏</p>
+			<ul class="daul">
+				<li class="dali"><a href="#" class="daa">最畅销专栏</a></li>
+				<li class="dali"><a href="#" class="daa">精英养成计划</a></li>
+			</ul>
+			<br><br>
+			<div class="imgs">
+				<ul class="ul3">
+					<li class="li4">
+						<img src="imgs/名1.webp" class="tu">
+						<div class="xiao">
+							<p class="zi">
+                                博弈论入门20讲
+                                <br><br>
+                                博弈大智慧，人生新高度
+                            </p>
+							<p class="gao"><span class="yellow">蒋文华</span>
+                                •  5655人在学
+                            </p>
+						</div>
+					</li>
+					<li class="li4">
+						<img src="imgs/名2.webp" class="tu">
+						<div class="xiao">
+							<p class="zi">
+                                24堂效率提升课
+                                <br><br>
+                                玩转实用工具，提升10倍效率
+                            </p>
+							<p class="gao"><span class="yellow">周建芳</span>
+                                •  5203人在学
+                            </p>
+						</div>
+					</li>
+					<li class="li4">
+						<img src="imgs/名3.webp" class="tu">
+						<div class="xiao">
+							<p class="zi">
+                                有用又有趣的经济学思维
+                                <br><br>
+                                帮你构建底层思维模型
+                            </p>
+							<p class="gao"><span class="yellow">文建东</span>
+                                •  5785人在学
+                            </p>
+						</div>
+					</li>
+					<li class="li4">
+						<img src="imgs/名4.webp" class="tu">
+						<div class="xiao">
+							<p class="zi">
+                                职场十大基本功
+                                <br><br>
+                                助你成为职场实力派
+                            </p>
+							<p class="gao"><span class="yellow">韩冬妮</span>
+                                •  3714人在学
+                            </p>
+						</div>
+					</li>
+					<li class="li41">
+						<img src="imgs/名5.webp" class="tu"><div class="xiao">
+							<p class="zi">
+                                13节目标管理课
+                                <br><br>
+                                梦想生活，由你创造     
+                            </p>
+							<p class="gao"><span class="yellow">卢子慧</span>
+                                •  4227人在学
+                            </p>
+						</div>
+					</li>
+					<li class="li4">
+						<img src="imgs/名6.webp" class="tu"><div class="xiao">
+							<p class="zi">
+                                15节情商提升课
+                                <br><br>
+                                让你拥有好人缘     
+                            </p>
+							<p class="gao"><span class="yellow">李幸</span>
+                                •  23411人在学
+                            </p>
+						</div>
+					</li>
+					<li class="li4">
+						<img src="imgs/名7.webp" class="tu">
+						<div class="xiao">
+							<p class="zi">
+                                20堂高能搜索修炼课
+                                <br><br>
+                                助你提升效率，为人生赋能
+                            </p>
+							<p class="gao"><span class="yellow">周建芳</span>
+                                •  13055人在学
+                            </p>
+						</div>
+					</li>
+					<li class="li4">
+						<img src="imgs/名8.webp" class="tu">
+						<div class="xiao">
+							<p class="zi">
+                                21天情绪自救指南
+                                <br><br>
+                                成为情绪的主人
+                            </p>
+							<p class="gao"><span class="yellow">卢子慧</span>
+                                •  24463人在学
+                            </p>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+<br>
+		<div id="jsj">
+			<p class="p1">计算机</p>
+			<ul class="daul">
+				<li class="dali"><a href="#" class="daa">最新好课推荐</a></li>
+				<li class="dali"><a href="#" class="daa">计算机基础</a></li>
+				<li class="dali"><a href="#" class="daa">程序设计</a></li>
+				<li class="dali"><a href="#" class="daa">考试/考研</a></li>
+			</ul>
+			<br><br>
+			<div class="imgs">
+				<ul class="ul3">
+					<li class="li4">
+						<img src="imgs/计1.webp" class="tu">
+						<div class="xiao">
+							<p class="zi">
+                                21考研计算机408系列直播
+                                <br><br>
+                                王道论坛
+                            </p>
+							<p class="gao"><span class="yellow">高级</span>
+                                •  1351人在学习
+                            </p>
+						</div>
+					</li>
+					<li class="li4">
+						<img src="imgs/计2.webp" class="tu">
+						<div class="xiao">
+							<p class="zi">
+                                Excel+PowerBI数据分析
+                                <br><br>
+                                冯然
+                            </p>
+							<p class="gao"><span class="yellow">高级</span>
+                                •  61人在学习
+                            </p>
+						</div>
+					</li>
+					<li class="li4">
+						<img src="imgs/计3.webp" class="tu">
+						<div class="xiao">
+							<p class="zi">
+                                计算机二级office极速通关
+                                <br><br>
+                                计算机二级小黑老师
+                            </p>
+							<p class="gao"><span class="yellow">高级</span>
+                                •  444人在学习
+                            </p>
+						</div>
+					</li>
+					<li class="li4">
+						<img src="imgs/计4.webp" class="tu">
+						<div class="xiao">
+							<p class="zi">
+                               应用技术与工程实践
+                                <br><br>
+                                北京理工大学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;闫怀志
+                            </p>
+							<p class="gao"><span class="yellow">高级</span>
+                                •  3538人在学习
+                            </p>
+						</div>
+					</li>
+					<li class="li41">
+						<img src="imgs/计5.webp" class="tu"><div class="xiao">
+							<p class="zi">
+                                大数据基础与应用
+                                <br><br>
+                                北京理工大学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;计卫星
+                            </p>
+							<p class="gao"><span class="yellow">高级</span>
+                                •  9277人在学习
+                            </p>
+						</div>
+					</li>
+					<li class="li4">
+						<img src="imgs/计6.webp" class="tu"><div class="xiao">
+							<p class="zi">
+                                计算机组成与设计：RISC-V
+                                <br><br>
+                                浙江大学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;刘鹏
+                            </p>
+							<p class="gao"><span class="yellow">高级</span>
+                                •  3377人在学习
+                            </p>
+						</div>
+					</li>
+					<li class="li4">
+						<img src="imgs/计7.webp" class="tu">
+						<div class="xiao">
+							<p class="zi">
+                                人工智能产业应用前沿
+                                <br><br>
+                                文安智能&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;林宇
+                            </p>
+							<p class="gao"><span class="yellow">高级</span>
+                                •  2597人在学习
+                            </p>
+						</div>
+					</li>
+					<li class="li4">
+						<img src="imgs/计8.webp" class="tu">
+						<div class="xiao">
+							<p class="zi">
+                                密码学引论（下）
+                                <br><br>
+                                山东大学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;魏普文
+                            </p>
+							<p class="gao"><span class="yellow">高级</span>
+                                •  1015人在学习
+                            </p>
+						</div>
+					</li>
+					<li class="li4">
+						<img src="imgs/计9.webp" class="tu">
+						<div class="xiao">
+							<p class="zi">
+                                程序设计进阶
+                                <br><br>
+                                同济大学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;龚沛曾
+                            </p>
+							<p class="gao"><span class="yellow">高级</span>
+                                •  2146人在学习
+                            </p>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+<br>
+		<div id="wy">
+			<p class="p1">外语</p>
+			<ul class="daul">
+				<li class="dali"><a href="#" class="daa">听说读写</a></li>
+				<li class="dali"><a href="#" class="daa">学术/职场</a></li>
+				<li class="dali"><a href="#" class="daa">名师专栏</a></li>
+				<li class="dali"><a href="#" class="daa">考试/培训</a></li>
+			</ul>
+			<br><br>
+			<div class="imgs">
+				<ul class="ul3">
+					<li class="li4">
+						<img src="imgs/外1.webp" class="tu">
+						<div class="xiao">
+							<p class="zi">
+                                &nbsp;&nbsp;&nbsp;&nbsp;《人人会写作》
+                                <br><br>
+                                山东大学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;邵春燕
+                            </p>
+							<p class="gao"><span class="yellow">高级</span>
+                                •  3547人在学习
+                            </p>
+						</div>
+					</li>
+					<li class="li4">
+						<img src="imgs/外2.webp" class="tu">
+						<div class="xiao">
+							<p class="zi">
+                                &nbsp;&nbsp;&nbsp;&nbsp;《大学日语》
+                                <br><br>
+                                西安交通大学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;张文丽
+                            </p>
+							<p class="gao"><span class="yellow">高级</span>
+                                •  13720人在学习
+                            </p>
+						</div>
+					</li>
+					<li class="li4">
+						<img src="imgs/外3.webp" class="tu">
+						<div class="xiao">
+							<p class="zi">
+                                &nbsp;&nbsp;&nbsp;&nbsp;《英语视听》
+                                <br><br>
+                                东北师范大学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;赵哲
+                            </p>
+							<p class="gao"><span class="yellow">高级</span>
+                                •  3953人在学习
+                            </p>
+						</div>
+					</li>
+					<li class="li4">
+						<img src="imgs/外4.webp" class="tu">
+						<div class="xiao">
+							<p class="zi">
+                                &nbsp;&nbsp;&nbsp;&nbsp;《新公共法语初级》
+                                <br><br>
+                                上海外国语大学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;李沁
+                            </p>
+							<p class="gao"><span class="yellow">高级</span>
+                                •  2875人在学习
+                            </p>
+						</div>
+					</li>
+					<li class="li41">
+						<img src="imgs/外5.webp" class="tu"><div class="xiao">
+							<p class="zi">
+                                &nbsp;&nbsp;&nbsp;&nbsp;《法语语法一点通》
+                                <br><br>
+                                青岛大学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;马一凡
+                            </p>
+							<p class="gao"><span class="yellow">高级</span>
+                                •  1952人在学习
+                            </p>
+						</div>
+					</li>
+					<li class="li4">
+						<img src="imgs/外6.webp" class="tu"><div class="xiao">
+							<p class="zi">
+                                &nbsp;&nbsp;&nbsp;&nbsp;《英语演讲与演示》
+                                <br><br>
+                                北京大学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;张宏岩
+                            </p>
+							<p class="gao"><span class="yellow">高级</span>
+                                •  5553人在学习
+                            </p>
+						</div>
+					</li>
+					<li class="li4">
+						<img src="imgs/外7.webp" class="tu">
+						<div class="xiao">
+							<p class="zi">
+                                &nbsp;&nbsp;&nbsp;&nbsp;《英文科技论文写作》
+                                <br><br>
+                                北京理工大学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;刘芳
+                            </p>
+							<p class="gao"><span class="yellow">高级</span>
+                                •  1749人在学习
+                            </p>
+						</div>
+					</li>
+					<li class="li4">
+						<img src="imgs/外8.webp" class="tu">
+						<div class="xiao">
+							<p class="zi">
+                                &nbsp;&nbsp;&nbsp;&nbsp;《学术英语写作》
+                                <br><br>
+                                北京工业大学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;万伟珊
+                            </p>
+							<p class="gao"><span class="yellow">高级</span>
+                                •  4557人在学习
+                            </p>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<script>
+			var li30=document.getElementsByClassName("li3")[0];
+			var li31=document.getElementsByClassName("li3")[1];
+			var li32=document.getElementsByClassName("li3")[2];
+			var li33=document.getElementsByClassName("li3")[3];
+			var li34=document.getElementsByClassName("li3")[4];
+			var li35=document.getElementsByClassName("li3")[5];
+			var li36=document.getElementsByClassName("li3")[6];
+			var li37=document.getElementsByClassName("xiu")[0];
+			var gjjpk=document.getElementById("gjjpk");
+			var mszl=document.getElementById("mszl");
+			var jsj=document.getElementById("jsj");
+			var wy=document.getElementById("wy");
+			li30.onclick=function(){
+				gjjpk.style.display="block";
+				mszl.style.display="none";
+				jsj.style.display="none";
+				wy.style.display="none";
+			}
+			li31.onclick=function(){
+				gjjpk.style.display="none";
+				mszl.style.display="block";
+				jsj.style.display="none";
+				wy.style.display="none";
+			}
+			li32.onclick=function(){
+				gjjpk.style.display="none";
+				mszl.style.display="none";
+				jsj.style.display="block";
+				wy.style.display="none";
+			}
+			li33.onclick=function(){
+				gjjpk.style.display="none";
+				mszl.style.display="none";
+				jsj.style.display="none";
+				wy.style.display="block";
+			}
+			li37.onclick=function(){
+				gjjpk.style.display="block";
+				mszl.style.display="block";
+				jsj.style.display="block";
+				wy.style.display="block";
+			}
+			li34.onclick=function(){
+				alert("暂未收录！")
+			}
+			li35.onclick=function(){
+				alert("暂未收录！")
+			}
+			li36.onclick=function(){
+				alert("暂未收录！")
+			}
+		</script>
+		<div class="dao5">
+			<div class="dao51">
+				<img src="imgs/logo.jpg" class="xue2">
+				<p class="p51">致力于普及中国最好的教育,与中国一流大学和机构合作提供在线课程。</p>
+				<input type="submit" value="下载APP" class="input3">
+			</div>
+			<div class="dao52">
+				<p class="p52">关于我们</p>
+				<ul class="ul5">
+					<li class="li5">联系我们</li>
+					<li class="li5">常见问题</li>
+					<li class="li5">法律条款</li>
+					<li class="li5">意见反馈</li>
+					<li class="li5">学校云</li>
+				</ul>
+			</div>
+			<div class="dao52" id="dao53">
+				<p class="p52">新手指南</p>
+				<ul class="ul5">
+					<li class="li5">如何注册</li>
+					<li class="li5">如何选课</li>
+					<li class="li5">如何拿到毕业证</li>
+					<li class="li5">学分是什么</li>
+					<li class="li5">考试未通过怎么办</li>
+				</ul>
+			</div>
+			<div class="dao52" id="dao54">
+				<p class="p52">友情链接</p>
+				<ul class="ul5">
+					<li class="li5">网易卡搭编程</li>
+					<li class="li5">网易云课堂</li>
+					<li class="li5">网易100分</li>
+				</ul>
+			</div>
+			<script>
+				var down=document.getElementsByClassName("input3")[0];
+				down.onclick=function(){
+					if(confirm("确定要下载嘛？")){
+						if(confirm("下载后你的电脑可能会发生爆炸，是否仍要下载")){
+							alert("好吧，你的电脑要完了(除非重启)，自毁程序启动ing~");
+							setTimeout(alert("诶，我怂了，俺不敢造次。"),5000);
+							alert("审核作业辛苦了！");
+						}else{
+							alert("哈哈哈哈，被我吓到了吧，怎么敢让您的电脑崩溃呢");
+						}
+					}else{
+						alert("熊猫课堂求关注呀！");
+					}
+				}
+			</script>
+		</div>
+	</div>
+	</div>
+</body>
+</html>
